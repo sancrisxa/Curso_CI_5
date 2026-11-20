@@ -30,4 +30,14 @@ jobs:
         - run: echo "$(terraform -chdir=Infra_CI/env/Homolog output -raw IP_alb)"
 
 
+        - name: Setup Python
+          uses: actions/setup-python@v2.3.3
+          with:
+            python-version: 3.10
+
+        - uses: BSFishy/pip-action@v1
+          with:
+            packages: |
+              locust
+
         
